@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class User extends Model {
+  class Location extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -13,38 +13,62 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   };
-  User.init({
+  Location.init({
     name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    firstname:  {
+    category: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    email:  {
+    address: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    password:  {
+    postal_code: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    image:  {
+    city: {
       type: DataTypes.STRING,
-    },
-    refresh_token: {
-      type: DataTypes.STRING,
-    },
-    IsAdmin:  {
-      type: DataTypes.BOOLEAN,
       allowNull: false,
-      defaultValue: 0
     },
+    state: {
+      type: DataTypes.STRING,
+    },
+    country: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    latitude:  {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+    },
+    longitude:  {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+    },
+    image: {
+      type: DataTypes.STRING,
+    },
+    description: {
+      type: DataTypes.STRING,
+    },
+    rate:  {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+    },
+    website: {
+      type: DataTypes.STRING,
+    },
+    social_media: {
+      type: DataTypes.STRING,
+    }
   }, {
     sequelize,
-    modelName: 'User',
-    tableName: 'users',
+    modelName: 'Location',
+    tableName: 'locations',
   });
-  return User;
+  return Location;
 };
