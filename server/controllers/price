@@ -1,4 +1,4 @@
-const { User } = require("../models");
+const { Price } = require("../models");
 
 const test = async (req, res) => {
   console.log("yee");
@@ -6,12 +6,12 @@ const test = async (req, res) => {
 };
 
 const register = async (req,res) => {
-  const {name, firstname, email, password, image, isAdmin} = req.body
+  const {type, value} = req.body
 
   try{
-    const user = await User.create({ name, firstname, email, password, image, isAdmin })
+    const price = await Price.create({ type, value })
   
-    return res.json(user)
+    return res.json(price)
   }catch(err){
     console.log(err)
     return res.status(500).json(err)
