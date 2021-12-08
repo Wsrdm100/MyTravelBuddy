@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.belongsTo(models.Owner,{foreignKey: "owner_id"})
+      this.belongsToMany(models.User,{through: "user_location", foreignKey: "location_id"})
     }
   };
   Location.init({
@@ -64,6 +66,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     social_media: {
       type: DataTypes.STRING,
+    },
+    owner_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   }, {
     sequelize,

@@ -9,7 +9,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       rate: {
+        allowNull: false,
         type: Sequelize.FLOAT
+      },
+      comment: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -18,6 +22,14 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      user_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      location_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false
       }
     });
   },
