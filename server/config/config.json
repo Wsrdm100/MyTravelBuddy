@@ -1,22 +1,22 @@
 {
   "development": {
-    "username": "Classsed",
-    "password": "root",
-    "database": "sequelize_db",
+    "username": "root",
+    "password": null,
+    "database": "mytravelbuddy_dev",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": null,
-    "database": "database_test",
+    "database": "mytravelbuddy_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
     "password": null,
-    "database": "database_production",
+    "database": "mytravelbuddy_production",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
