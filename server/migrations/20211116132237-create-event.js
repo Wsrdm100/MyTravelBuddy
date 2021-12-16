@@ -39,6 +39,10 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      location_id:{
+        type: Sequelize.INTEGER,
+        allowNull: false,
       }
     });
   },

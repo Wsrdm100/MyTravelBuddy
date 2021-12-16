@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.belongsTo(models.Location,{foreignKey: "location_id"})
     }
   };
   Event.init({
@@ -43,6 +44,10 @@ module.exports = (sequelize, DataTypes) => {
     type: DataTypes.BOOLEAN,
     allowNull: false,
   },
+  location_id:{
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  }
   }, {
     sequelize,
     modelName: 'Event',

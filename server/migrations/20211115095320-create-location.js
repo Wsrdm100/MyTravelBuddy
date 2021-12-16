@@ -57,6 +57,10 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      owner_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false
       }
     });
   },

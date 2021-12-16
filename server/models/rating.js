@@ -11,10 +11,28 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.belongsTo(models.User,{foreignKey: "user_id"})
+      this.belongsTo(models.Location,{foreignKey: "location_id"})
+      
     }
   };
   Rating.init({
-    rate: DataTypes.FLOAT
+    rate:{
+    type: DataTypes.FLOAT,
+    allowNull: false,
+    },
+    comment:{
+      type: DataTypes.STRING,
+
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    location_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    }
   }, {
     sequelize,
     modelName: 'Rating',

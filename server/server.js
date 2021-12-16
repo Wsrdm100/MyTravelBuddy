@@ -60,6 +60,6 @@ app.get('/api/profile', validateToken, async(req,res) => Auth.profile(req, res))
 
 app.listen({ port: PORT }, async () => {
   console.log("Connecting...");
-  await sequelize.authenticate();
+  await sequelize.sync({alter:true});
   console.log("Running on port 8080 !");
 });

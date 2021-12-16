@@ -6,10 +6,10 @@ const test = async (req, res) => {
 };
 
 const register = async (req,res) => {
-  const {rate} = req.body
+  const {rate, comment} = req.body
 
   try{
-    const rating = await Rating.create({ rate })
+    const rating = await Rating.create({ rate, comment })
   
     return res.json(rating)
   }catch(err){
