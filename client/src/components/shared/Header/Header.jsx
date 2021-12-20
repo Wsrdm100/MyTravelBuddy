@@ -9,6 +9,7 @@ import { ReactComponent as Arrow } from "../../../assets/icons/arrow.svg";
 const Header = () => {
   return (
     <div className={styles.headerContainer}>
+      
       <header className={styles.header}>
         <div className={styles.logo}>MyTravelBuddy</div>
 
