@@ -124,23 +124,31 @@
 }
 
 .menu{
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
     font-size: 1.4rem;
+    font-weight: 500;
     list-style: none ;
-    
+    width: 80%;
+    margin: 40px auto;
+    padding: 0;
+    a {
 
+      text-decoration: none;
+    }
     
   li{ 
-    margin: 8px;
-    padding-bottom: 30px;
+    height: fit-content;
   }    
 }  
 
 .identifier{
-
+  display: flex;align-items: center;
+  justify-content: center;
   text-align: center;
-  position:relative;
   width  : 100%;
-  padding: 8px 32px;
+  box-sizing: border-box;
   height : 50px;  
   border-radius: 10px;
   background-color:#FFCB1F;
