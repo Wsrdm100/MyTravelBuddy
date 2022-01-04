@@ -59,7 +59,26 @@ const Header = () => {
       </div>
 
       <input type="checkbox" id="showNav" className={styles.navHeaderInput} />
-      <div className={styles.navHeader}>NAV</div>
+      <div className={styles.navHeader}>
+      <ul className={styles.menu}>
+
+    <li>
+        <a className={styles.identifier} href="identifier">S'identifier</a>
+    </li>
+    
+
+    <li>
+        <a href="contacter">Contacter</a>
+    </li>
+    <li>
+        <a href="espace_professionnel">Espace professionnel</a>
+    </li>
+    <li>
+        <a href="mentions_légales">Mentions légales</a>
+    </li>
+</ul>
+      
+      </div>
     </div>
   );
 };

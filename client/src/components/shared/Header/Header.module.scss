@@ -117,10 +117,46 @@
     display: none;
   }
   
-  .navHeaderInput:checked + .navHeader {
-    transform: translateX(0);
-    transition: all 0.5s ease;
-  }
+
+.navHeaderInput:checked + .navHeader {
+  transform: translateX(0);
+  transition: all 0.5s ease;
+}
+
+.menu{
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    list-style: none ;
+    width: 80%;
+    margin: 40px auto;
+    padding: 0;
+    a {
+
+      text-decoration: none;
+    }
+    
+  li{ 
+    height: fit-content;
+  }    
+}  
+
+.identifier{
+  display: flex;align-items: center;
+  justify-content: center;
+  text-align: center;
+  width  : 100%;
+  box-sizing: border-box;
+  height : 50px;  
+  border-radius: 10px;
+  background-color:#FFCB1F;
+  color:white;
+}
+
+
+
 
 
   .Languages {
