@@ -1,4 +1,3 @@
-import "./App.scss";
 import Header from "./components/shared/Header/Header";
 import System from "./styles/system/System";
 
