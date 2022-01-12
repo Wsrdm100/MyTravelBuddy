@@ -56,6 +56,11 @@ app.post("/api/register", async (req, res) => Auth.register(req, res));
 app.post('/api/login', async(req,res) => Auth.login(req, res));
 app.get('/api/profile', validateToken, async(req,res) => Auth.profile(req, res));
 
+const Structure = require("./controllers/structure");
+app.post("/api/structure/create/owner", async (req, res) => Structure.register_owner(req, res));
+app.post("/api/structure/create/location", async (req, res) => Structure.register_location(req, res));
+app.get("/api/structure/getInfo", async (req, res) => Structure.getInfo(req, res));
+
 // Start Server
 
 app.listen({ port: PORT }, async () => {

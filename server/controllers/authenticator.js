@@ -18,7 +18,7 @@ const register = async (req, res) => {
             email: body.email,
             password:  hash,
         }).then(() => {
-            res.status(200).send("User Registered !");
+            res.status(200).send("User Registered.");
         }).catch((err) => {
             if (err) {
                 res.status(400).json({ error: err });
@@ -31,12 +31,12 @@ const login = async (req, res) => {
     const {email, password} = req.body;
     const user = await User.findOne({where: {email: email} });
 
-    if (!user) res.status(400).json({error: "Email doesn't exist"});
+    if (!user) res.status(400).json({error: "Email not assigned !"});
 
     const dbPassword = user.password;
     bcrypt.compare(password, dbPassword).then((match) => {
         if (!match) {
-            res.status(400).json({ error: "Wrong email or password" });
+            res.status(400).json({ error: "Wrong email or password !" });
         } else {
             const accessToken = createTokens(user)
 
@@ -45,7 +45,7 @@ const login = async (req, res) => {
                 httpOnly: true
             });
 
-            res.status(200).send("Logged in !");
+            res.status(200).send("Successfully logged in.");
         }
     });
 };
