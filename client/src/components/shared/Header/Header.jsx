@@ -5,23 +5,24 @@ import frFlag from "../../../assets/images/France.png";
 
 import { ReactComponent as Arrow } from "../../../assets/icons/arrow.svg";
 
-
 import { useState, useEffect } from "react";
 
 const Header = () => {
-
   const [langChecked, setLangChecked] = useState(false);
-  const [navChecked, setNavChecked]= useState(false);
+  const [navChecked, setNavChecked] = useState(false);
 
   return (
     <div className={styles.headerContainer}>
-      
       <header className={styles.header}>
         <div className={styles.logo}>MyTravelBuddy</div>
 
         <div className={styles.rightHeader}>
           <span className={styles.donate}>Faire un don</span>
-          <label htmlFor="showLanguage" className={styles.countriesSelection} onClick={() => setLangChecked(!langChecked)}>
+          <label
+            htmlFor="showLanguage"
+            className={styles.countriesSelection}
+            onClick={() => setLangChecked(!langChecked)}
+          >
             <div className={`${styles.lang} ${langChecked && styles.rotate}`}>
               <img className={styles.flag} src={frFlag} />
               <span>FR</span>
@@ -29,8 +30,14 @@ const Header = () => {
             </div>
           </label>
 
-          <label htmlFor="showNav" className={styles.ok} onClick={()=>setNavChecked(!navChecked)}>
-            <div className={`${styles.hamburger} ${navChecked && styles.change}`}>
+          <label
+            htmlFor="showNav"
+            className={styles.ok}
+            onClick={() => setNavChecked(!navChecked)}
+          >
+            <div
+              className={`${styles.hamburger} ${navChecked && styles.change}`}
+            >
               <div className={styles.hamburgerLine}></div>
               <div className={styles.hamburgerLine}></div>
               <div className={styles.hamburgerLine}></div>
@@ -60,24 +67,23 @@ const Header = () => {
 
       <input type="checkbox" id="showNav" className={styles.navHeaderInput} />
       <div className={styles.navHeader}>
-      <ul className={styles.menu}>
+        <ul className={styles.menu}>
+          <li>
+            <a className="primary-btn full-width" href="identifier">
+              S'identifier
+            </a>
+          </li>
 
-    <li>
-        <a className={styles.identifier} href="identifier">S'identifier</a>
-    </li>
-    
-
-    <li>
-        <a href="contacter">Contacter</a>
-    </li>
-    <li>
-        <a href="espace_professionnel">Espace professionnel</a>
-    </li>
-    <li>
-        <a href="mentions_légales">Mentions légales</a>
-    </li>
-</ul>
-      
+          <li>
+            <a href="contacter">Contacter</a>
+          </li>
+          <li>
+            <a href="espace_professionnel">Espace professionnel</a>
+          </li>
+          <li>
+            <a href="mentions_légales">Mentions légales</a>
+          </li>
+        </ul>
       </div>
     </div>
   );
