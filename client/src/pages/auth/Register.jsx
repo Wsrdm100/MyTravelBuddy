@@ -3,7 +3,6 @@ import styles from "./auth.module.scss";
 import api from "../../services/api";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
@@ -39,7 +38,7 @@ const Register = () => {
     reset();
   };
   return (
-    <main class="page">
+    <main className="page">
       <form onSubmit={handleSubmit(onSubmitHandler)} className={styles.form}>
         <h2 className={styles.title}>Créer un compte</h2>
 
@@ -105,7 +104,7 @@ const Register = () => {
           <button className="primary-btn">Créer un compte</button>
           <div className={styles.bottomText}>
             <span>Déjà un compte ?</span>
-            <Link className="primary-link" to="#">
+            <Link className="primary-link" to="/auth/login">
               Se connecter
             </Link>
           </div>

@@ -5,8 +5,8 @@ import frFlag from "../../../assets/images/France.png";
 
 import { ReactComponent as Arrow } from "../../../assets/icons/arrow.svg";
 
-import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Header = () => {
   const [langChecked, setLangChecked] = useState(false);

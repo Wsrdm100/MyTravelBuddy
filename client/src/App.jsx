@@ -9,9 +9,8 @@ import Home from "./pages/Home/Home";
 function App() {
   return (
     <div className="App">
-      <Header />
-
       <Router>
+        <Header />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/system" element={<System />} />

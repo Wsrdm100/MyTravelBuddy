@@ -6,7 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
-const Register = () => {
+const Login = () => {
   const schema = yup.object().shape({
     email: yup.string().required("Email requis"),
     password: yup.string().required("Mot de passe requis"),
@@ -21,11 +21,11 @@ const Register = () => {
 
   const onSubmitHandler = async (data) => {
     console.log({ data });
-    await api.post("/register", data);
+    await api.post("/login", data);
     reset();
   };
   return (
-    <main class="page">
+    <main className="page">
       <form onSubmit={handleSubmit(onSubmitHandler)} className={styles.form}>
         <h2 className={styles.title}>Connexion</h2>
 
@@ -53,7 +53,7 @@ const Register = () => {
           <p className="error">{errors.password?.message}</p>
         </div>
         <div className={`row space-between ${styles.bottomRow}`}>
-          <button className="primary-btn">Créer un compte</button>
+          <button className="primary-btn">Se connecter</button>
           <div className={styles.bottomText}>
             <span>Pas de compte ?</span>
             <Link className="primary-link" to="/auth/register">
@@ -66,4 +66,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;
