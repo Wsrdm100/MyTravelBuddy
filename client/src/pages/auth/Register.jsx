@@ -1,13 +1,16 @@
 import styles from "./auth.module.scss";
 
-import axios from "axios";
+import api from "../../services/api";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const schema = yup.object().shape({
+    name: yup.string().required("Nom"),
+    firstname: yup.string().required("Prénom"),
     email: yup.string().email().required("Email requis"),
     password: yup
       .string()
@@ -30,18 +33,45 @@ const Register = () => {
     reset,
   } = useForm({ resolver: yupResolver(schema) });
 
-  const onSubmitHandler = (data) => {
+  const onSubmitHandler = async (data) => {
     console.log({ data });
+    await api.post("/register", data);
     reset();
   };
   return (
     <main class="page">
       <form onSubmit={handleSubmit(onSubmitHandler)} className={styles.form}>
         <h2 className={styles.title}>Créer un compte</h2>
+
+        <div className={`row ${styles.row}`}>
+          <div className="form-group">
+            <label className="label">Nom :</label>
+            <input
+              name="name"
+              type="text"
+              {...register("name")}
+              placeholder="Nom"
+              className="input"
+            />
+            <p className="error">{errors.name?.message}</p>
+          </div>
+          <div className="form-group">
+            <label className="label">Prénom :</label>
+            <input
+              name="firstname"
+              type="text"
+              {...register("firstname")}
+              placeholder="Prénom"
+              className="input"
+            />
+            <p className="error">{errors.firstname?.message}</p>
+          </div>
+        </div>
         <div className="form-group">
           <label className="label">Email :</label>
           <input
             name="email"
+            type="mail"
             {...register("email")}
             placeholder="Adresse mail"
             className="input"
@@ -53,6 +83,7 @@ const Register = () => {
 
           <input
             name="password"
+            type="password"
             {...register("password")}
             placeholder="Mot de passe"
             className="input"
@@ -63,6 +94,7 @@ const Register = () => {
           <label className="label">Confirmer mot de passe :</label>
           <input
             name="confirm_password"
+            type="password"
             {...register("confirm_password")}
             placeholder="Confirmer mot de passe"
             className="input"
@@ -73,9 +105,9 @@ const Register = () => {
           <button className="primary-btn">Créer un compte</button>
           <div className={styles.bottomText}>
             <span>Déjà un compte ?</span>
-            <a className="primary-link" href="#">
+            <Link className="primary-link" to="#">
               Se connecter
-            </a>
+            </Link>
           </div>
         </div>
       </form>

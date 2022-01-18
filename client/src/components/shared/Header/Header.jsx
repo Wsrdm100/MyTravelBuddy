@@ -5,7 +5,8 @@ import frFlag from "../../../assets/images/France.png";
 
 import { ReactComponent as Arrow } from "../../../assets/icons/arrow.svg";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [langChecked, setLangChecked] = useState(false);
@@ -69,9 +70,9 @@ const Header = () => {
       <div className={styles.navHeader}>
         <ul className={styles.menu}>
           <li>
-            <a className="primary-btn full-width" href="identifier">
+            <Link className="primary-btn full-width" to="/auth/login">
               S'identifier
-            </a>
+            </Link>
           </li>
 
           <li>
