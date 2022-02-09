@@ -1,5 +1,7 @@
 import Header from "./components/shared/Header/Header";
 import System from "./styles/system/System";
+import Searchbar from "./components/shared/Searchbar/Searchbar";
+
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Register from "./pages/auth/Register";
@@ -9,6 +11,7 @@ import Home from "./pages/Home/Home";
 function App() {
   return (
     <div className="App">
+      
       <Router>
         <Header />
         <Routes>
@@ -18,6 +21,7 @@ function App() {
           <Route exact path="/auth/login" element={<Login />} />
         </Routes>
       </Router>
+      <Searchbar/>
     </div>
   );
 }
